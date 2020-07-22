@@ -221,6 +221,9 @@ export class MyListingsAddPage implements OnInit {
         photoUrl: this.downloadUrl
       }
       console.log(this.user.uid, listing)
+      this.dataSvc.addListings("all",listing).then(()=>{
+
+      })
       this.dataSvc.addListing(this.user.uid, listing).then(()=>{
         this.util.toast('Listing has been successfully added!', 'success', 'bottom');
       })
