@@ -1,10 +1,42 @@
 <ion-header>
   <ion-toolbar color="secondary">
    
-    <ion-title>Profile</ion-title>
+    <ion-title style= "text-align: center; font-weight: bolder;">Profile</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <div class="card_div2" *ngFor="let item of items">
+    
+      <div style="padding-left: 10px;">
+        <img class = "img" [src]="item.photoUrl">      
+        <br>
+        <ion-toolbar color="primary">
+          <ion-title class="lab">First Name</ion-title>
+        </ion-toolbar>
+        <ion-toolbar class = "cont" color="secondary">
+          <ion-title>{{item.fname}}</ion-title>
+        </ion-toolbar><br>
+        <ion-toolbar color="primary">
+          <ion-title class="lab">Last Name</ion-title>
+        </ion-toolbar>
+        <ion-toolbar class = "cont" color="secondary">
+          <ion-title>{{item.lname}}</ion-title>
+        </ion-toolbar><br>
+        <ion-toolbar color="primary">
+          <ion-title class="lab">Contact Number</ion-title>
+        </ion-toolbar>
+        <ion-toolbar class = "cont" color="secondary">
+          <ion-title>{{item.phone}}</ion-title>
+        </ion-toolbar><br>
+    
+    </div>
+     
+  </div>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" (click)="Edit()">
+    <ion-fab-button color="secondary">
+      <ion-icon name="create-sharp"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  
 </ion-content>
