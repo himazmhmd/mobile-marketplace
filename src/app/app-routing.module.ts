@@ -11,7 +11,8 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)
+    loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule),
+    canActivate: [AuthGuard]
   }
   ,
   {
@@ -25,8 +26,25 @@ const routes: Routes = [
   },
   {
     path: 'add-listing',
-    loadChildren: () => import('./pages/my-listings-add/my-listings-add.module').then( m => m.MyListingsAddPageModule)
-  }
+    loadChildren: () => import('./pages/my-listings-add/my-listings-add.module').then( m => m.MyListingsAddPageModule),
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'profile',
+    loadChildren: () => import('./pages/profile/profile.module').then( m => m.ProfilePageModule),
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'my-listings',
+    loadChildren: () => import('./pages/my-listings/my-listings.module').then( m => m.MyListingsPageModule),
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'edit-profile',
+    loadChildren: () => import('./pages/edit-profile/edit-profile.module').then( m => m.EditProfilePageModule),
+    canActivate: [AuthGuard]
+  },
+  
 ];
 @NgModule({
   imports: [
